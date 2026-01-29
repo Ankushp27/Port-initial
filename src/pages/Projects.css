@@ -1,0 +1,36 @@
+/* Projects page enhancements */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--panel) !important;
+  border: 1px solid var(--border);
+}
+
+.project-thumb { position: relative; }
+.project-thumb img { display: block; }
+.project-thumb::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 20%, rgba(0,0,0,.55) 100%);
+  opacity: .6; transition: opacity .25s ease;
+}
+.theme-light .project-thumb::after {
+  background: linear-gradient(180deg, rgba(255,255,255,0) 20%, rgba(255,255,255,.85) 100%);
+}
+.project-card:hover .project-thumb::after { opacity: .75; }
+
+.project-content { position: relative; z-index: 1; background: var(--panel); border-top: 1px solid var(--border); }
+.project-title { font-size: 1.05rem; }
+.project-desc { line-height: 1.45; }
+
+/* Ensure solid backgrounds in light mode too */
+.theme-light .project-card { background: #ffffff !important; border-color: #e5e7eb; }
+.theme-light .project-content { background: #ffffff; border-top-color: #e5e7eb; }
+
+/* Modal polish */
+.card input.field, .card textarea.field { width: 100%; }
+.card label { color: var(--muted); }
+
+/* Force solid background for Add/Edit modal card */
+.modal-card { background: var(--panel) !important; border: 1px solid var(--border) !important; }
+.theme-light .modal-card { background: #ffffff !important; border-color: #e5e7eb !important; }
