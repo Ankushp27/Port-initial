@@ -1,4 +1,5 @@
-const API_URL = '/api/projects'
+const API_BASE = import.meta.env.VITE_API_BASE || ''
+const API_URL = `${API_BASE}/api/projects`
 
 function getAuthHeaders() {
   const token = localStorage.getItem('adminToken') || '22bcte07' // Fallback for now
